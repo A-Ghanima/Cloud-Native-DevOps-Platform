@@ -38,4 +38,4 @@ jobs:
          with:
           push: true
           context: .
-          tags: ghcr.io/A-Ghanima/Cloud-Native-DevOps-Platform:latest
+          tags: ghcr.io/A-Ghanima/cloud-native-devops-platform:latest
