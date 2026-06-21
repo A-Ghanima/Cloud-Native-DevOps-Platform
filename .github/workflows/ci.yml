@@ -1,4 +1,5 @@
-name: CI 
+
+name: ci
 on:
   push:
     branches: [main]
@@ -20,3 +21,21 @@ jobs:
          run: pip install -r requirements.txt
       -  name: run the test
          run: pytest
+  docker:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      -  name: checking out
+         uses: actions/checkout@v4
+      -  name: loging in to GHCR
+         uses: docker/login-action@v3
+         with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      -  name: build and push the Docker image
+         uses: docker/build-push-action@v7
+         with:
+          push: true
+          context: .
+          tags: ghcr.io/A-Ghanima/Cloud-Native-DevOps-Platform:latest
