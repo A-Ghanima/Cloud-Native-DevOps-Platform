@@ -23,6 +23,9 @@ jobs:
          run: pytest
   docker:
     runs-on: ubuntu-latest
+    permissions:
+     packages: write
+     contents: read
     needs: test
     steps:
       -  name: checking out
