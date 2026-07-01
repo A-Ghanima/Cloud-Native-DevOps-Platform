@@ -1,4 +1,20 @@
-./
-../
-.venv/
+# Python caches and virtual environments
 __pycache__/
+*.pyc
+.venv/
+venches/
+
+# Testing
+.pytest_cache/
+
+# Terraform caches and binaries (Everywhere in the project)
+**/.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
+
+# Zip files and installers
+*.zip
