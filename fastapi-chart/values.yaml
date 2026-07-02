@@ -1,0 +1,12 @@
+replicaCount: 2
+
+image:
+  repository: ghcr.io/a-ghanima/cloud-native-devops-platform
+  tag: latest
+
+service:
+  type: NodePort
+  port: 8000
+  targetPort: 8000
+  nodePort: 30080
+

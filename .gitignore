@@ -18,3 +18,7 @@ crash.*.log
 
 # Zip files and installers
 *.zip
+
+# Helm
+fastapi-chart/charts/
+*.tgz
